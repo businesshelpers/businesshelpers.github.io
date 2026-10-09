@@ -38,6 +38,9 @@
     --bubble-in: #FFFFFF;
     --bubble-out: #DFF3D0;
     --ok: #1F8A4C;
+    --deep: #0E1222;
+    --deep-ink: #F2F3F7;
+    --deep-ok: #7CF2A6;
     --shadow: rgba(14, 18, 34, .28);
 
     --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
@@ -49,6 +52,7 @@
       --cobalt: #2441D6; --cobalt-deep: #172C9E;
       --paper: #0B0E17; --surface: #141A27; --ink: #E3E7EF; --muted: #8E98AB; --line: #253046;
       --chat-bg: #0F1520; --bubble-in: #1C2433; --bubble-out: #22372A; --ok: #5BC98A; --shadow: rgba(0,0,0,.6);
+      --deep: #1B2440; --deep-ink: #E9ECF3; --deep-ok: #7CF2A6;
       color-scheme: dark;
     }
   }
@@ -56,7 +60,8 @@
     --cobalt: #2441D6; --cobalt-deep: #172C9E;
     --paper: #0B0E17; --surface: #141A27; --ink: #E3E7EF; --muted: #8E98AB; --line: #253046;
     --chat-bg: #0F1520; --bubble-in: #1C2433; --bubble-out: #22372A; --ok: #5BC98A; --shadow: rgba(0,0,0,.6);
-    color-scheme: dark;
+    --deep: #1B2440; --deep-ink: #E9ECF3; --deep-ok: #7CF2A6;
+      color-scheme: dark;
   }
 
   * { box-sizing: border-box; }
@@ -119,7 +124,6 @@
   .btn.light { background: var(--on-cobalt); color: var(--cobalt-deep); }
   .btn.outline { color: var(--on-cobalt); border: 1.5px solid rgba(255,255,255,.55); }
   .btn.outline:hover { background: rgba(255,255,255,.1); }
-  .btn.dark { background: var(--ink); color: var(--paper); }
   .hero .hint { font-size: 13.5px; color: var(--on-cobalt-muted); margin: 18px 0 0; max-width: 46ch; }
 
   /* телефон и заявки вокруг него */
@@ -161,7 +165,7 @@
   @keyframes float { 50% { transform: translateY(-10px); } }
 
   /* ================= TICKER ================= */
-  .ticker { background: var(--ink); color: var(--paper); overflow: hidden; border-block: 1px solid var(--line); }
+  .ticker { background: var(--deep); color: var(--deep-ink); overflow: hidden; border-block: 1px solid var(--line); }
   .ticker-track { display: flex; width: max-content; animation: run 38s linear infinite; }
   .ticker span { font-family: var(--display); font-stretch: 125%; font-weight: 700; font-size: 20px; padding: 16px 0; white-space: nowrap; }
   .ticker span::after { content: "✦"; color: var(--night); font-size: 14px; padding-inline: 26px; vertical-align: 3px; }
@@ -196,16 +200,16 @@
   .split { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: stretch; }
   .split > * { min-width: 0; }
   .lead-card {
-    background: var(--ink); color: var(--paper); border-radius: 22px; padding: 28px;
+    background: var(--deep); color: var(--deep-ink); border-radius: 22px; padding: 28px;
     display: flex; flex-direction: column; gap: 18px; position: relative; overflow: hidden;
   }
   .lead-card::after { content: ""; position: absolute; width: 260px; height: 260px; right: -90px; top: -90px; border-radius: 50%; background: radial-gradient(circle, color-mix(in srgb, var(--cobalt) 70%, transparent), transparent 70%); }
-  .lead-card .mono-label { color: color-mix(in srgb, var(--paper) 60%, transparent); position: relative; }
+  .lead-card .mono-label { color: color-mix(in srgb, var(--deep-ink) 60%, transparent); position: relative; }
   .lead-card .title { font-family: var(--display); font-stretch: 115%; font-weight: 800; font-size: 1.6rem; line-height: 1.1; position: relative; }
   .lead-card dl { display: grid; grid-template-columns: auto 1fr; gap: 10px 18px; margin: 0; font-size: 15px; position: relative; }
-  .lead-card dt { color: color-mix(in srgb, var(--paper) 55%, transparent); }
+  .lead-card dt { color: color-mix(in srgb, var(--deep-ink) 55%, transparent); }
   .lead-card dd { margin: 0; font-variant-numeric: tabular-nums; }
-  .lead-card .stamp { margin-top: auto; font-family: var(--mono); font-size: 12px; color: #7CF2A6; position: relative; }
+  .lead-card .stamp { margin-top: auto; font-family: var(--mono); font-size: 12.5px; font-weight: 600; color: var(--deep-ok); position: relative; }
   .benefits { display: grid; gap: 14px; }
   .benefit { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 20px 22px; }
   .benefit p { color: var(--muted); font-size: 15px; }
@@ -467,7 +471,7 @@
         <span class="mono-label">Цены</span>
         <h2 class="display">Фиксированная стоимость</h2>
       </div>
-      <p class="sec-note">50% предоплата, остаток после запуска, когда вы проверили, что всё работает.</p>
+      <p class="sec-note">Предоплата всего 25%, остаток после запуска, когда вы проверили, что всё работает.</p>
     </div>
     <div class="prices">
       <div class="price-card hot">
